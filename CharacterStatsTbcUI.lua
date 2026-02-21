@@ -404,7 +404,9 @@ function UIConfig:SetupConfigInterface()
 
     CSC_ConfigFrame = CreateFrame("Frame", "CSC_InterfaceOptionsPanel", UIParent);
     CSC_ConfigFrame.name = "CharacterStatsTBC";
-    InterfaceOptions_AddCategory(CSC_ConfigFrame);
+    
+    local category = Settings.RegisterCanvasLayoutCategory(CSC_ConfigFrame, CSC_ConfigFrame.name);
+    Settings.RegisterAddOnCategory(category);
 
     -- Title and font
     CSC_ConfigFrame.title = CreateFrame("Frame", CSC_ConfigFrame.name, CSC_ConfigFrame);
